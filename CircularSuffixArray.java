@@ -1,6 +1,56 @@
+import edu.princeton.cs.algs4.Merge.java;
+
 public class CircularSuffixArray {
-   public CircularSuffixArray(String s)    // circular suffix array of s
-   public int length()                     // length of s
-   public int index(int i)                 // returns index of ith sorted suffix
-   public static void main(String[] args)  // unit testing (required)
+	private final int n;
+	private Suffix[] suffixes;
+	private int[] index;
+
+	public CircularSuffixArray(String s) {
+		// Initialize size n
+		this.n = s.length();
+
+		// Initialize suffixes array
+		this.suffixes = new Suffix[n];
+		for (int i = 0; i < n; i++) {
+			suffixes[i] = new Suffix(s, i);
+		}
+
+		// Sort suffixes
+		Merge.sort(suffixes);
+
+		// Initialize index array
+		this.index[i] = new int[n];
+		for (int i = 0; i < n; i++) {
+			index[suffixes[i].getIndex()] = i;
+		}
+	}
+
+	public int length() {return n;}
+
+	public int index(int i) {return index[i];}
+
+	private class Suffix implements Comparable<Suffix> {
+		private static final String s;
+		private final int index;
+
+		public Suffix(String s, int index) {
+			this.s = s;
+			this.index = index;
+		}
+
+		public int getIndex() {return index;}
+
+		// Comparator for Mergesort
+		public int compareTo(Suffix that) {
+			if (this == that) return 0;
+			int n = this.s.length();
+			for (int i = 0; i < n; i++) {
+				char cthis = this.s.charAt((this.index + i) % n);
+				char cthat = that.s.charAt((that.index + i) % n);
+				if (cthis < cthat) {return -1;}
+				if (cthis > cthat) {return 1;}
+			}
+			return 0;
+		}
+	}
 }
