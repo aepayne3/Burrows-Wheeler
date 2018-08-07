@@ -73,7 +73,7 @@ Huffman expand()                      n                  n
  *  include any help from people (including TAs,
  *  classmates, and friends) and attribute them by name.
  *****************************************************************************/
-
+1. https://stackoverflow.com/questions/1200621/how-do-i-declare-and-initialize-an-array-in-java
 
 /******************************************************************************
  *  Describe any serious problems you encountered.                    
