@@ -12,7 +12,7 @@ public class MoveToFront {
   // Process input
   while (!BinaryStdIn.isEmpty()) {
    // Read character
-   char c = BinaryStdIn.readChar(8);
+   char c = BinaryStdIn.readChar();
 
    // Find index of current character
    int index = -1;
@@ -22,8 +22,8 @@ public class MoveToFront {
    index++;
 
    // Output encoded character
-   BinaryStdOut.write(index);
-   BinaryStdOut.flush();
+   BinaryStdOut.write((char)index);
+   //BinaryStdOut.flush();
 
    // Swap recently encoded character to front of array
    for (int i = index; i - 1 >= 0; i--) {
@@ -32,6 +32,7 @@ public class MoveToFront {
     letters[i] = temp;
    }
   }
+  BinaryStdOut.close();
  }
 
  public static void decode() {
@@ -44,11 +45,11 @@ public class MoveToFront {
   // Process input
   while (!BinaryStdIn.isEmpty()) {
    // Read integer
-   int index = BinaryStdIn.readInt(8);
+   int index = BinaryStdIn.readInt();
    
    // Output decoded character
    BinaryStdOut.write(letters[index]);
-   BinaryStdOut.flush();
+  // BinaryStdOut.flush();
    
    // Swap recently decoded character to front of array
    for (int i = index; i - 1 >= 0; i--) {
@@ -57,5 +58,7 @@ public class MoveToFront {
     letters[i] = temp;
    }
   }
+  BinaryStdOut.close();
+
  }
 }
