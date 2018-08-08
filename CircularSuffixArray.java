@@ -6,6 +6,7 @@ public class CircularSuffixArray {
  private int[] index;
 
  public CircularSuffixArray(String s) {
+     if (s == null){ throw new IllegalArgumentException();}
   // Initialize size n
   this.n = s.length();
 
@@ -25,23 +26,31 @@ public class CircularSuffixArray {
   }
  }
 
- public int length() {return n;}
+ public int length(){return n;}
 
- public int index(int i) {return index[i];}
+ public int index(int i) {
+     if (i < 0) {throw new IllegalArgumentException();}
+     if (i > this.n-1) {throw new IllegalArgumentException();}
+     return index[i];
+ }
 
  private static class Suffix implements Comparable<Suffix> {
   private static String s;
   private final int index;
 
   public Suffix(String s, int index) {
-   this.s = s;
-   this.index = index;
+      if ( s == null) {throw new IllegalArgumentException();}
+      if (index < 0) {throw new IllegalArgumentException();}
+      if (index > 0) {throw new IllegalArgumentException();}
+      this.s = s;
+      this.index = index;
   }
 
   public int getIndex() {return index;}
 
   // Comparator for Mergesort
   public int compareTo(Suffix that) {
+      if (that == null) {throw new IllegalArgumentException();}
    if (this == that) return 0;
    int n = this.s.length();
    for (int i = 0; i < n; i++) {
