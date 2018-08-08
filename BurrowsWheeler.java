@@ -1,5 +1,5 @@
-import edu.princeton.cs.algs4;
-import stdlib;
+import edu.princeton.cs.algs4.BinaryStdIn;
+import edu.princeton.cs.algs4.BinaryStdOut;
 
 // You only write for one word. Is this what you want?
 public class BurrowsWheeler {
@@ -8,7 +8,7 @@ public class BurrowsWheeler {
  
  public static void transform() {
   // Get string
-  String in=BinaryStdIn.readString();
+  String in= BinaryStdIn.readString();
   
   // Initialize circular suffix array
   CircularSuffixArray circSA=new CircularSuffixArray(in);
@@ -46,7 +46,7 @@ public class BurrowsWheeler {
         
   // Maintain a letter count for each string processed
   // Make this count indexed by ASCII char value
-  int[] count = new int[R + 1]
+  int[] count = new int[Radix + 1];
   int[] next = new int[n];
         
   // Increment count of each letter in t
@@ -55,7 +55,7 @@ public class BurrowsWheeler {
         
   // Make the count at i be a cummulative sum of all other counts
   // E.g. count[3] = count[0] + count[1] + count[2] + count[3];
-  for (int i = 1; i < R + 1; i++)
+  for (int i = 1; i < Radix + 1; i++)
             count[i] += count[i - 1];
         
   // The 'next' array has not be declared until before, so it is unclear what you are doing here
