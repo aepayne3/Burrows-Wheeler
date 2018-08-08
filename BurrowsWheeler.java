@@ -1,11 +1,27 @@
+import edu.princeton.cs.algs4;
+import stdlib;
+
 public class BurrowsWheeler {
-    // apply Burrows-Wheeler transform, reading from standard input and writing to standard output
-    public static void transform(){}
-
-    // apply Burrows-Wheeler inverse transform, reading from standard input and writing to standard output
-    public static void inverseTransform(){}
-
-    // if args[0] is '-', apply Burrows-Wheeler transform
-    // if args[0] is '+', apply Burrows-Wheeler inverse transform
-    public static void main(String[] args){}
-}
+	
+	private static final int Radix = 256;
+	
+	public static void encode() {
+		String in=BinaryStdIn.readString();
+		CircularSuffixArray circSA=new CircularSuffixArray(in);
+		int inSize=in.length();
+		int circSize=circSA.length();
+		int i=0;
+		while (i<circSize) {
+			if (circSA.index(i)==0) {
+			break;}
+			i++;
+		}
+		BinaryStdOut.write(i);
+		
+		for (int j=0; j<circSize; j++) {
+			int indexNum = ((circSA.index(j)+(inSize-1))%inSize);
+			BinaryStdOut.write(in.charAt(indexNum));
+		}
+	BinaryStdOut.close();
+	}
+			
