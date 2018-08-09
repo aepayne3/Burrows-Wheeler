@@ -1,7 +1,7 @@
 /******************************************************************************
- *  Name:   
- 
- *  LUID:    
+*  Name:   Abigail Payne  
+	ID: L20471771744  
+   
  *  
  *
  *  Partner Name: Elaine Schutte    
@@ -85,6 +85,7 @@ There are no known bugs or limitations
  *  Describe any serious problems you encountered.                    
  *****************************************************************************/
 Project had to run from the command line and one partner had issues with java mismatches between what Dr. Java used and what the terminal tried to use.
+Unable to use a batch file to get the timing for the files
 
 
 /******************************************************************************
