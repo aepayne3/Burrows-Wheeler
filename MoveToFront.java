@@ -45,7 +45,7 @@ public class MoveToFront {
   // Process input
   while (!BinaryStdIn.isEmpty()) {
    // Read integer
-   int index = BinaryStdIn.readInt();
+   int index = (int)BinaryStdIn.readChar();
    
    // Output decoded character
    BinaryStdOut.write(letters[index]);
@@ -61,4 +61,9 @@ public class MoveToFront {
   BinaryStdOut.close();
 
  }
+     public static void main(String[] args)
+    {
+        if      (args[0].equals("-")) encode();
+        else if (args[0].equals("+")) decode();
+    }
 }
