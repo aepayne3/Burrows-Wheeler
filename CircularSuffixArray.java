@@ -22,7 +22,9 @@ public class CircularSuffixArray {
   // Initialize index array
   this.index = new int[n];
   for (int i = 0; i < n; i++) {
-   index[suffixes[i].getIndex()] = i;
+   index[i] = suffixes[i].getIndex();
+    //  System.out.println(suffixes[i].getIndex());
+      //System.out.println();
   }
  }
 
@@ -34,14 +36,14 @@ public class CircularSuffixArray {
      return index[i];
  }
 
- private static class Suffix implements Comparable<Suffix> {
-  private static String s;
+ private class Suffix implements Comparable<Suffix> {
+  private String s;
   private final int index;
 
-  public Suffix(String s, int index) {
+  private Suffix(String s, int index) {
       if ( s == null) {throw new IllegalArgumentException();}
       if (index < 0) {throw new IllegalArgumentException();}
-      if (index > 0) {throw new IllegalArgumentException();}
+     // if (index > 0) {throw new IllegalArgumentException();}
       this.s = s;
       this.index = index;
   }
@@ -54,12 +56,20 @@ public class CircularSuffixArray {
    if (this == that) return 0;
    int n = this.s.length();
    for (int i = 0; i < n; i++) {
-    char cthis = this.s.charAt((this.index + i) % n);
-    char cthat = that.s.charAt((that.index + i) % n);
+    char cthis = s.charAt((this.index + i) % n);
+    char cthat = s.charAt((that.index + i) % n);
     if (cthis < cthat) {return -1;}
     if (cthis > cthat) {return 1;}
    }
    return 0;
   }
  }
+  public static void main(String[] args)
+    {
+    String test=args[0];
+    CircularSuffixArray circSA=new CircularSuffixArray(test);
+    int n=test.length();
+    for (int i=0; i<n; i++) {
+      System.out.println(circSA.index(i));}
+  }
 }
