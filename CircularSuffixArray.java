@@ -1,3 +1,7 @@
+/*
+ * @author Abigail Payne
+ * @author Elaine Shutte
+ */
 import edu.princeton.cs.algs4.Merge;
 
 public class CircularSuffixArray {

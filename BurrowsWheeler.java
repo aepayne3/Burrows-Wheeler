@@ -1,8 +1,16 @@
+/*
+ * @author Abigail Payne
+ * @author Elaine Shutte
+ */
 import edu.princeton.cs.algs4.BinaryStdIn;
 import edu.princeton.cs.algs4.BinaryStdOut;
 import java.util.Arrays;
 
 public class BurrowsWheeler {
+/*
+ * apply Burrows-Wheeler transform, reading from standard input
+ * and writing to standard output
+ */
  public static void transform() {
   while (!BinaryStdIn.isEmpty()) {
    String input = BinaryStdIn.readString();
@@ -21,7 +29,10 @@ public class BurrowsWheeler {
    BinaryStdOut.close();
   }
  }
-
+/*
+ * apply Burrows-Wheeler inversetransform, reading from standard input
+ * and writing to standard output
+ */
  public static void inverseTransform() {
   while (!BinaryStdIn.isEmpty()) {
    int first = BinaryStdIn.readInt();
