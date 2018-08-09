@@ -74,7 +74,14 @@ public static void encode() {
  }
      public static void main(String[] args)
     {
-        if      (args[0].equals("-")) encode();
-        else if (args[0].equals("+")) decode();
+         if(args[0].equals("-")){
+             encode();
+         }
+         else if(args[0].equals("+")){
+             decode();
+         }
+         else{
+             throw new IllegalArgumentException();
+         }
     }
 }
