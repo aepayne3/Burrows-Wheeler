@@ -4,9 +4,9 @@
  *  LUID:    
  *  
  *
- *  Partner Name:     
+ *  Partner Name: Elaine Schutte    
 
- *  Partner LUID:    
+ *  Partner LUID:  L20469954  
  *  *
  *  Hours to complete assignment (optional):
  *
@@ -27,7 +27,7 @@ Programming Assignment 4: Burrows-Wheeler
 
 File     Encoding Time    Decoding time      Compression ratio
 ------------------------------------------------------------------------
-
+abra.txt .6 sec
 
 
 /******************************************************************************
@@ -50,8 +50,8 @@ File     Encoding Time    Decoding time      Compression ratio
 
                                       typical            worst
 ---------------------------------------------------------------------
-BurrowsWheeler transform()
-BurrowsWheeler inverseTransform()
+BurrowsWheeler transform()			nlogn			nlogn
+BurrowsWheeler inverseTransform()	nlogn			nlogn
 MoveToFront encode()                     R+ n                R + n
 MoveToFront decode()                     R + n               R + n
 Huffman compress()                    n + R log R        n + R log R
@@ -74,6 +74,12 @@ There are no known bugs or limitations
  *  classmates, and friends) and attribute them by name.
  *****************************************************************************/
 1. https://stackoverflow.com/questions/1200621/how-do-i-declare-and-initialize-an-array-in-java
+
+2.https://docs.oracle.com/javase/8/docs/api/index.html?java/util/package-summary.html
+
+3.https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/bwt.pdf
+
+4.https://www.geeksforgeeks.org/inverting-burrows-wheeler-transform/
 
 /******************************************************************************
  *  Describe any serious problems you encountered.                    
