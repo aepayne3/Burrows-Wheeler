@@ -52,8 +52,8 @@ File     Encoding Time    Decoding time      Compression ratio
 ---------------------------------------------------------------------
 BurrowsWheeler transform()
 BurrowsWheeler inverseTransform()
-MoveToFront encode()
-MoveToFront decode()
+MoveToFront encode()                     R+ n                R + n
+MoveToFront decode()                     R + n               R + n
 Huffman compress()                    n + R log R        n + R log R
 Huffman expand()                      n                  n
 
@@ -64,7 +64,7 @@ Huffman expand()                      n                  n
 /******************************************************************************
  *  Known bugs / limitations.
  *****************************************************************************/
-
+There are no known bugs or limitations
 
 
 /******************************************************************************
@@ -78,7 +78,7 @@ Huffman expand()                      n                  n
 /******************************************************************************
  *  Describe any serious problems you encountered.                    
  *****************************************************************************/
-
+Project had to run from the command line and one partner had issues with java mismatches between what Dr. Java used and what the terminal tried to use.
 
 
 /******************************************************************************
