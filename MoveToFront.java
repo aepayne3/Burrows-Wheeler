@@ -1,8 +1,18 @@
+/*
+ * @author Abigail Payne
+ * @author Eaine Schutte
+ */
+
 import edu.princeton.cs.algs4.BinaryStdIn;
 import edu.princeton.cs.algs4.BinaryStdOut;
 
 public class MoveToFront {
- public static void encode() {
+ 
+/*
+ * Apply move-to-front encoding, reading from 
+ * standard input and writing to standard output
+ */
+public static void encode() {
   // Initialize ascii ordered character array
   char[] letters = new char[256];
   for (int i = 0; i < 256; i++) {
@@ -23,7 +33,6 @@ public class MoveToFront {
 
    // Output encoded character
    BinaryStdOut.write((char)index);
-   //BinaryStdOut.flush();
 
    // Swap recently encoded character to front of array
    for (int i = index; i - 1 >= 0; i--) {
@@ -34,7 +43,10 @@ public class MoveToFront {
   }
   BinaryStdOut.close();
  }
-
+/*
+ * apply move-to-front decoding, reading from standard input
+ * and writing to standard output
+ */
  public static void decode() {
   // Initialize ascii ordered character array
   char[] letters = new char[256];
@@ -49,8 +61,7 @@ public class MoveToFront {
    
    // Output decoded character
    BinaryStdOut.write(letters[index]);
-  // BinaryStdOut.flush();
-   
+    
    // Swap recently decoded character to front of array
    for (int i = index; i - 1 >= 0; i--) {
     char temp = letters[i - 1];
